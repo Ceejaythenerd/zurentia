@@ -249,16 +249,29 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.2rem;
-    font-size: 0.7rem;
+    background: none;
+    border: none;
+    cursor: pointer;
     color: var(--clr-text-primary);
+    font-family: var(--font-body);
+    font-size: 0.75rem;
     text-transform: uppercase;
-    font-weight: 500;
 }
 
 .action-item svg {
-    color: var(--clr-text-primary);
+    margin-bottom: 0.2rem;
     stroke-width: 1;
+}
+
+/* Mobile Menu Utilities */
+.mobile-menu-btn {
+    display: none;
+}
+.mobile-only {
+    display: none !important;
+}
+.desktop-only {
+    display: inline;
 }
 
 /* ==========================================================================
@@ -1431,5 +1444,80 @@ a:focus-visible, button:focus-visible, input:focus-visible {
     
     .cookies-content {
         padding-right: 0;
+    }
+
+    /* Header & Mobile Nav */
+    .mobile-menu-btn {
+        display: flex;
+    }
+    .desktop-only {
+        display: none !important;
+    }
+    .mobile-only {
+        display: inline-block !important;
+    }
+
+    #cart-count-mobile {
+        background: var(--clr-accent-gold);
+        color: white;
+        font-size: 0.7rem;
+        padding: 2px 6px;
+        border-radius: 10px;
+        position: absolute;
+        top: -5px;
+        right: -5px;
+    }
+    
+    #cart-trigger {
+        position: relative;
+    }
+
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--clr-bg-primary);
+        border-bottom: 1px solid var(--clr-border);
+        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        z-index: 99;
+    }
+    
+    .main-nav.active {
+        display: block;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        padding: var(--space-md);
+        gap: 1.5rem;
+    }
+    
+    .main-nav .separator {
+        display: none;
+    }
+
+    /* Scaling Typography and Spacing */
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    .hero p {
+        font-size: 0.95rem;
+    }
+    .text-page {
+        padding: var(--space-lg) var(--space-sm);
+    }
+    .footer-inner {
+        gap: 2rem;
+    }
+    .footer-links {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .modal-content {
+        margin: var(--space-sm);
+        max-height: 90vh;
+        overflow-y: auto;
     }
 }

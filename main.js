@@ -18,6 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
         else header.classList.remove('header-scrolled');
     });
 
+    // Mobile Navigation Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mainNav = document.getElementById('main-nav');
+    if (mobileMenuBtn && mainNav) {
+        mobileMenuBtn.addEventListener('click', () => {
+            const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+            mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+            mainNav.classList.toggle('active');
+        });
+    }
+
     // 3. Product Data & Cart State Management (ZAR)
     const productsDb = {
         "Chamomile Bomb": { id: "Chamomile Bomb", name: "Chamomile & Calendula Bomb", price: 250, img: "assets/product_chamomile_bomb.png", type: "Bomb" },
@@ -37,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // DOM Elements
     const cartCountEl = document.getElementById('cart-count');
+    const cartCountMobileEl = document.getElementById('cart-count-mobile');
     const cartDrawer = document.getElementById('cart-drawer');
     const cartOverlay = document.getElementById('cart-overlay');
     const cartItemsContainer = document.getElementById('cart-items-container');
@@ -80,8 +92,18 @@ document.addEventListener('DOMContentLoaded', () => {
         drawerTitle.textContent = "Checkout Details";
     };
 
+    function updateCartCount() {
+        const count = cart.reduce((total, item) => total + item.quantity, 0);
+        if (cartCountEl) cartCountEl.textContent = count;
+        if (cartCountMobileEl) cartCountMobileEl.textContent = count;
+        localStorage.setItem('zurentia_cart', JSON.stringify(cart));
+    }
+
     // Cart Functions
-    const saveCart = () => localStorage.setItem('zurentia_cart', JSON.stringify(cart));
+    const saveCart = () => {
+        localStorage.setItem('zurentia_cart', JSON.stringify(cart));
+        updateCartCount();
+    };
 
     const renderCart = () => {
         cartItemsContainer.innerHTML = '';
@@ -121,7 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        cartCountEl.textContent = count;
+        if (cartCountEl) cartCountEl.textContent = count;
+        if (cartCountMobileEl) cartCountMobileEl.textContent = count;
         cartTotalPriceEl.textContent = `R ${total}`;
         
         // Add event listeners to newly created buttons
