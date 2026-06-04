@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Zurentia's collection of handcrafted botanical essentials. Healing bombs, soaks, body oils, and balms.">
+    <meta property="og:title" content="Shop | Zurentia | Authentic Natural Healing">
+    <meta property="og:description" content="Explore Zurentia's collection of handcrafted botanical essentials. Healing bombs, soaks, body oils, and balms.">
+    <meta property="og:type" content="website">
+    <title>Shop | Zurentia | Authentic Natural Healing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="index.html"><img src="assets/logo.png" alt="Zurentia Logo" id="logo-img"></a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">HOME</a> <span class="separator">|</span></li>
+                    <li><a href="shop.html" class="active">SHOP</a> <span class="separator">|</span></li>
+                    <li><a href="index.html#journal">JOURNAL</a> <span class="separator">|</span></li>
+                    <li><a href="index.html#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="action-item" id="cart-trigger" aria-label="Shopping Bag">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    <span>Shopping Bag (<span id="cart-count">0</span>)</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="shop-page container">
+        <h1 class="page-title">OUR COLLECTION</h1>
+        
+        <div class="shop-header-actions">
+            <button class="btn btn-outline mobile-filter-btn" id="mobile-filter-btn">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: middle;"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+                FILTER PRODUCTS
+            </button>
+        </div>
+        
+        <div class="shop-layout">
+            <!-- Sidebar Filters -->
+            <aside class="shop-sidebar" id="shop-sidebar">
+                <div class="sidebar-header">
+                    <h2>Filters</h2>
+                    <button class="sidebar-close" id="sidebar-close" aria-label="Close filters">&times;</button>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Search</h3>
+                    <div class="search-bar sidebar-search">
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        <input type="text" id="shop-search" placeholder="Search products...">
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Product Type</h3>
+                    <label class="checkbox-label"><input type="checkbox" name="filter-type" value="Bomb"> Healing Bombs</label>
+                    <label class="checkbox-label"><input type="checkbox" name="filter-type" value="Soak"> Soaks & Salts</label>
+                    <label class="checkbox-label"><input type="checkbox" name="filter-type" value="Oil"> Body Oils</label>
+                    <label class="checkbox-label"><input type="checkbox" name="filter-type" value="Balm"> Healing Balms</label>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Price Range</h3>
+                    <label class="radio-label"><input type="radio" name="filter-price" id="price-all" value="all" checked> All Prices</label>
+                    <label class="radio-label"><input type="radio" name="filter-price" value="under-300"> Under R 300</label>
+                    <label class="radio-label"><input type="radio" name="filter-price" value="300-500"> R 300 - R 500</label>
+                    <label class="radio-label"><input type="radio" name="filter-price" value="over-500"> Over R 500</label>
+                </div>
+
+                <button id="clear-filters-btn" class="btn btn-outline" style="margin-top: 1rem;">CLEAR FILTERS</button>
+            </aside>
+
+            <!-- Product Grid -->
+            <div class="products-grid shop-product-grid" id="shop-product-grid">
+                <!-- Products will be dynamically rendered here by JS -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-logo logo">
+                <img src="assets/logo.png" alt="Zurentia Logo" class="bw-logo">
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="shop.html">SHOP</a></li>
+                    <li><a href="index.html#journal">JOURNAL</a></li>
+                    <li><a href="index.html#contact">CONTACT</a></li>
+                </ul>
+                <ul>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="shipping.html">SHIPPING</a></li>
+                    <li><a href="terms.html">TERMS</a></li>
+                    <li><a href="privacy.html">PRIVACY</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>CONTACT US</h4>
+                <p>+27 73 090 8780</p>
+                <p><a href="mailto:hello@zurentia.com">hello@zurentia.com</a></p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                    <a href="#" aria-label="Facebook"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick View Modal -->
+    <div id="quick-view-modal" class="modal" aria-hidden="true">
+        <div class="modal-overlay" tabindex="-1" data-modal-close></div>
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" aria-label="Close modal" data-modal-close>&times;</button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-img" src="" alt="Product Image">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-title">Product Name</h2>
+                    <p id="modal-price" class="price">R 0</p>
+                    <p class="description">Experience the pure essence of nature with our meticulously handcrafted botanical formula. Designed to restore, nourish, and heal.</p>
+                    <div class="modal-quantity-wrapper">
+                        <label for="modal-qty-val" class="sr-only">Quantity</label>
+                        <div class="quantity-controls">
+                            <button class="qty-btn dec" id="modal-qty-dec" aria-label="Decrease quantity">-</button>
+                            <span class="qty-val" id="modal-qty-val" aria-live="polite">1</span>
+                            <button class="qty-btn inc" id="modal-qty-inc" aria-label="Increase quantity">+</button>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary add-to-cart-btn">ADD TO BAG</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Drawer -->
+    <div id="cart-overlay" class="cart-overlay" aria-hidden="true"></div>
+    <aside id="cart-drawer" class="cart-drawer" aria-hidden="true">
+        <div class="cart-header">
+            <h2 id="drawer-title">Your Bag</h2>
+            <button class="cart-close" id="cart-close" aria-label="Close cart">&times;</button>
+        </div>
+        
+        <!-- Cart Items View -->
+        <div id="cart-view" class="drawer-view active">
+            <div class="cart-items" id="cart-items-container">
+                <p class="empty-cart-msg">Your bag is currently empty.</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total</span>
+                    <span id="cart-total-price">R 0</span>
+                </div>
+                <button class="btn btn-primary checkout-btn" id="go-to-checkout-btn">PROCEED TO CHECKOUT</button>
+            </div>
+        </div>
+
+        <!-- Checkout Form View -->
+        <div id="checkout-view" class="drawer-view">
+            <div class="checkout-form-container">
+                <form id="whatsapp-checkout-form">
+                    <div class="form-group">
+                        <label for="customer-name">Full Name</label>
+                        <input type="text" id="customer-name" required placeholder="Jane Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-phone">Phone Number</label>
+                        <input type="text" id="customer-phone" required placeholder="073 123 4567">
+                    </div>
+                    <div class="form-group">
+                        <label>Delivery Method</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="delivery-method" value="Collection" checked> Collection</label>
+                            <label><input type="radio" name="delivery-method" value="Delivery"> Delivery</label>
+                        </div>
+                    </div>
+                    <div class="form-group" id="address-group" style="display: none;">
+                        <label for="customer-address">Delivery Address</label>
+                        <textarea id="customer-address" rows="3" placeholder="123 Main St..."></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="cart-footer">
+                <button class="btn btn-outline back-to-cart-btn" id="back-to-cart-btn">BACK TO CART</button>
+                <button type="submit" form="whatsapp-checkout-form" class="btn btn-whatsapp checkout-btn" id="submit-whatsapp-btn">SEND VIA WHATSAPP</button>
+            </div>
+        </div>
+    </aside>
+
+    <script src="main.js"></script>
+</body>
+</html>

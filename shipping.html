@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shipping and Delivery information for Zurentia's natural healing products.">
+    <title>Shipping & Delivery | Zurentia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="index.html"><img src="assets/logo.png" alt="Zurentia Logo" id="logo-img"></a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">HOME</a> <span class="separator">|</span></li>
+                    <li><a href="shop.html">SHOP</a> <span class="separator">|</span></li>
+                    <li><a href="index.html#journal">JOURNAL</a> <span class="separator">|</span></li>
+                    <li><a href="index.html#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="action-item" id="cart-trigger" aria-label="Shopping Bag">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    <span>Shopping Bag (<span id="cart-count">0</span>)</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container text-page animate-on-scroll visible">
+        <h1>SHIPPING & DELIVERY</h1>
+        
+        <h2>Local Delivery</h2>
+        <p>We deliver nationwide across South Africa. Standard delivery takes approximately 3-5 working days from the date your order is dispatched. We partner with reliable couriers to ensure your botanical goods arrive safely.</p>
+        
+        <h2>Delivery Costs</h2>
+        <ul>
+            <li><strong>Standard Delivery:</strong> R100 nationwide.</li>
+            <li><strong>Free Delivery:</strong> Orders over R1000 automatically qualify for free standard shipping.</li>
+        </ul>
+
+        <h2>Order Processing</h2>
+        <p>Because our products are handcrafted in small batches to ensure freshness and potency, please allow 1-2 business days for your order to be prepared before it is shipped.</p>
+
+        <h2>Collection</h2>
+        <p>If you are based locally, you may opt to collect your order directly from us to save on shipping fees. Simply select "Collection" at checkout and we will send you a WhatsApp message to coordinate a collection time.</p>
+
+        <h2>International Shipping</h2>
+        <p>At this time, we only ship within South Africa. We hope to bring our healing rituals to the rest of the world very soon. Join our Ritual Circle newsletter to be notified of any updates.</p>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-logo logo">
+                <img src="assets/logo.png" alt="Zurentia Logo" class="bw-logo">
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="shop.html">SHOP</a></li>
+                    <li><a href="index.html#journal">JOURNAL</a></li>
+                    <li><a href="index.html#contact">CONTACT</a></li>
+                </ul>
+                <ul>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="shipping.html" class="active">SHIPPING</a></li>
+                    <li><a href="terms.html">TERMS</a></li>
+                    <li><a href="privacy.html">PRIVACY</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>CONTACT US</h4>
+                <p>+27 73 090 8780</p>
+                <p><a href="mailto:hello@zurentia.com">hello@zurentia.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <div id="cart-overlay" class="cart-overlay" aria-hidden="true"></div>
+    <aside id="cart-drawer" class="cart-drawer" aria-hidden="true">
+        <div class="cart-header"><h2 id="drawer-title">Your Bag</h2><button class="cart-close" id="cart-close">&times;</button></div>
+        <div id="cart-view" class="drawer-view active"><div class="cart-items" id="cart-items-container"></div><div class="cart-footer"><div class="cart-total"><span>Total</span><span id="cart-total-price">R 0</span></div><button class="btn btn-primary checkout-btn" id="go-to-checkout-btn">PROCEED TO CHECKOUT</button></div></div>
+        <div id="checkout-view" class="drawer-view">
+            <div class="checkout-form-container">
+                <form id="whatsapp-checkout-form">
+                    <div class="form-group"><label>Full Name</label><input type="text" id="customer-name" required></div>
+                    <div class="form-group"><label>Phone Number</label><input type="text" id="customer-phone" required></div>
+                    <div class="form-group"><label>Delivery Method</label><div class="radio-group"><label><input type="radio" name="delivery-method" value="Collection" checked> Collection</label><label><input type="radio" name="delivery-method" value="Delivery"> Delivery</label></div></div>
+                    <div class="form-group" id="address-group" style="display: none;"><label>Delivery Address</label><textarea id="customer-address" rows="3"></textarea></div>
+                </form>
+            </div>
+            <div class="cart-footer"><button class="btn btn-outline back-to-cart-btn" id="back-to-cart-btn">BACK</button><button type="submit" form="whatsapp-checkout-form" class="btn btn-whatsapp checkout-btn">SEND VIA WHATSAPP</button></div>
+        </div>
+    </aside>
+
+    <script src="main.js"></script>
+</body>
+</html>
