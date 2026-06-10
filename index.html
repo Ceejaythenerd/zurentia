@@ -11,14 +11,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="assets/logo.png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/logo.webp">
+    <link rel="preload" as="image" href="assets/hero_bg.webp">
+    <link rel="stylesheet" href="styles.min.css">
 </head>
 <body>
     <header class="site-header">
         <div class="container header-inner">
             <div class="logo">
-                <img src="assets/logo.png" alt="Zurentia Logo" id="logo-img">
+                <img src="assets/logo.webp" alt="Zurentia Logo" id="logo-img">
             </div>
             <nav class="main-nav" id="main-nav">
                 <ul>
@@ -46,7 +47,7 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-bg">
-                <img src="assets/hero_bg.jpg" alt="Botanical Water Background">
+                <img src="assets/hero_bg.webp" alt="Botanical Water Background">
             </div>
             <div class="hero-content container">
                 <div class="search-bar">
@@ -65,41 +66,45 @@
         <section id="shop" class="products-section container animate-on-scroll">
             <div class="products-grid">
                 <!-- Product 1 -->
-                <div class="product-card">
+                <div class="product-card" data-product="Bath Bombs Collection" data-price="From R 35" data-img="assets/cat_bath_bomb_1781047428531.webp" style="cursor: pointer;">
                     <div class="product-image">
-                        <span class="badge">Herbal Infused</span>
-                        <img src="assets/product_chamomile_bomb.png" alt="Chamomile & Calendula Bomb" loading="lazy">
+                        <span class="badge">Most Popular</span>
+                        <img src="assets/cat_bath_bomb_1781047428531.webp" alt="Vibrant Bath Bombs" loading="lazy">
                     </div>
-                    <h3>CHAMOMILE & CALENDULA<br>BOMB.</h3>
-                    <p class="price">R 250</p>
-                    <button class="btn btn-secondary quick-view-btn" data-product="Chamomile Bomb" data-price="R 250" data-img="assets/product_chamomile_bomb.png">QUICK VIEW</button>
+                    <h3>VIBRANT BATH<br>BOMBS.</h3>
+                    <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(24)</span></div>
+                    <p class="price">From R 35</p>
+                    <button class="btn btn-primary smart-add-btn" data-product="Bath Bombs Collection">ADD TO CART</button>
                 </div>
                 <!-- Product 2 -->
-                <div class="product-card">
+                <div class="product-card" data-product="Botanical Plants" data-price="From R 45" data-img="assets/cat_plant_1781047439075.webp" style="cursor: pointer;">
                     <div class="product-image">
-                        <img src="assets/product_lavender_soak.png" alt="Lavender Sleep Soak" loading="lazy">
+                        <img src="assets/cat_plant_1781047439075.webp" alt="Lush Botanical Plants" loading="lazy">
                     </div>
-                    <h3>LAVENDER SLEEP SOAK</h3>
-                    <p class="price">R 350</p>
-                    <button class="btn btn-secondary quick-view-btn" data-product="Lavender Soak" data-price="R 350" data-img="assets/product_lavender_soak.png">QUICK VIEW</button>
+                    <h3>LUSH BOTANICAL<br>PLANTS.</h3>
+                    <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(24)</span></div>
+                    <p class="price">From R 45</p>
+                    <button class="btn btn-primary smart-add-btn" data-product="Botanical Plants">ADD TO CART</button>
                 </div>
                 <!-- Product 3 -->
-                <div class="product-card">
+                <div class="product-card" data-product="Healing Herbs" data-price="From R 30" data-img="assets/cat_herbs_1781047449948.webp" style="cursor: pointer;">
                     <div class="product-image">
-                        <img src="assets/product_oil.jpg" alt="Botanical Body Oil" loading="lazy">
+                        <img src="assets/cat_herbs_1781047449948.webp" alt="Natural Healing Herbs" loading="lazy">
                     </div>
-                    <h3>BOTANICAL BODY OIL</h3>
-                    <p class="price">R 450</p>
-                    <button class="btn btn-secondary quick-view-btn" data-product="Nourishing Body Oil" data-price="R 450" data-img="assets/product_oil.jpg">QUICK VIEW</button>
+                    <h3>NATURAL HEALING<br>HERBS.</h3>
+                    <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(24)</span></div>
+                    <p class="price">From R 30</p>
+                    <button class="btn btn-primary smart-add-btn" data-product="Healing Herbs">ADD TO CART</button>
                 </div>
                 <!-- Product 4 -->
-                <div class="product-card">
+                <div class="product-card" data-product="Nourishing Skin Care" data-price="From R 37" data-img="assets/cat_skincare_1781047461950.webp" style="cursor: pointer;">
                     <div class="product-image">
-                        <img src="assets/product_eucalyptus_balm.png" alt="Eucalyptus Muscle Balm" loading="lazy">
+                        <img src="assets/cat_skincare_1781047461950.webp" alt="Nourishing Skin Care" loading="lazy">
                     </div>
-                    <h3>EUCALYPTUS MUSCLE<br>BALM.</h3>
-                    <p class="price">R 550</p>
-                    <button class="btn btn-secondary quick-view-btn" data-product="Eucalyptus Balm" data-price="R 550" data-img="assets/product_eucalyptus_balm.png">QUICK VIEW</button>
+                    <h3>NOURISHING SKIN<br>CARE.</h3>
+                    <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(24)</span></div>
+                    <p class="price">From R 37</p>
+                    <button class="btn btn-primary smart-add-btn" data-product="Nourishing Skin Care">ADD TO CART</button>
                 </div>
             </div>
             
@@ -110,7 +115,7 @@
                     <p>Authentic natural healing is rooted in our connection and care, the ability to restore tranquility with every ritual we deliver based on Zurentia philosophy.</p>
                 </div>
                 <div class="promo-image">
-                    <img src="assets/promo_herbs.jpg" alt="Botanical Ingredients" loading="lazy">
+                    <img src="assets/promo_herbs.webp" alt="Botanical Ingredients" loading="lazy">
                 </div>
             </div>
         </section>
@@ -122,23 +127,26 @@
                 <div class="journal-grid">
                     <article class="journal-card" data-journal="botanicals" tabindex="0" role="button">
                         <div class="journal-image">
-                            <img src="assets/journal_1.jpg" alt="Botanical Ingredients" loading="lazy">
+                            <img src="assets/journal_1.webp" alt="Botanical Ingredients" loading="lazy">
                         </div>
                         <h3>The Power of Botanicals</h3>
+                    <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(24)</span></div>
                         <p class="date">Dec 13, 2023</p>
                     </article>
                     <article class="journal-card" data-journal="rituals" tabindex="0" role="button">
                         <div class="journal-image">
-                            <img src="assets/journal_2.jpg" alt="Bath Ritual" loading="lazy">
+                            <img src="assets/journal_2.webp" alt="Bath Ritual" loading="lazy">
                         </div>
                         <h3>Daily Healing Rituals</h3>
+                    <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(24)</span></div>
                         <p class="date">Dec 15, 2023</p>
                     </article>
                     <article class="journal-card" data-journal="sourcing" tabindex="0" role="button">
                         <div class="journal-image">
-                            <img src="assets/journal_3.jpg" alt="Natural Elements" loading="lazy">
+                            <img src="assets/journal_3.webp" alt="Natural Elements" loading="lazy">
                         </div>
                         <h3>Sustainable Sourcing</h3>
+                    <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(24)</span></div>
                         <p class="date">Dec 18, 2023</p>
                     </article>
                 </div>
@@ -160,7 +168,7 @@
     <footer id="contact" class="site-footer">
         <div class="container footer-inner">
             <div class="footer-logo logo">
-                <img src="assets/logo.png" alt="Zurentia Logo" class="bw-logo">
+                <img src="assets/logo.webp" alt="Zurentia Logo" class="bw-logo">
             </div>
             <div class="footer-links">
                 <ul>
@@ -252,7 +260,8 @@
                     <span>Total</span>
                     <span id="cart-total-price">R 0</span>
                 </div>
-                <button class="btn btn-primary checkout-btn" id="go-to-checkout-btn">PROCEED TO CHECKOUT</button>
+                <button class="btn btn-primary checkout-btn" id="go-to-checkout-btn" style="margin-bottom: 0.5rem;">PROCEED TO CHECKOUT</button>
+                <button id="clear-cart-btn" class="btn btn-outline" style="width: 100%; margin-top: 0.5rem;">EMPTY CART</button>
             </div>
         </div>
 
@@ -279,6 +288,10 @@
                         <label for="customer-address">Delivery Address</label>
                         <textarea id="customer-address" rows="3" placeholder="123 Main St..."></textarea>
                     </div>
+                    <div class="form-group">
+                        <label for="customer-notes">Order Notes (Optional)</label>
+                        <textarea id="customer-notes" rows="2" placeholder="Gift wrapping, special instructions..."></textarea>
+                    </div>
                 </form>
             </div>
             <div class="cart-footer">
@@ -288,6 +301,7 @@
         </div>
     </aside>
 
-    <script src="main.js"></script>
+    <script src="main.min.js"></script>
+
 </body>
 </html>

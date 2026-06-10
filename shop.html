@@ -11,14 +11,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="assets/logo.png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/logo.webp">
+    <link rel="stylesheet" href="styles.min.css">
 </head>
 <body>
     <header class="site-header">
         <div class="container header-inner">
             <div class="logo">
-                <a href="index.html"><img src="assets/logo.png" alt="Zurentia Logo" id="logo-img"></a>
+                <a href="index.html"><img src="assets/logo.webp" alt="Zurentia Logo" id="logo-img"></a>
             </div>
             <nav class="main-nav" id="main-nav">
                 <ul>
@@ -70,34 +70,64 @@
 
                 <div class="filter-group">
                     <h3>Product Type</h3>
-                    <label class="checkbox-label"><input type="checkbox" name="filter-type" value="Bomb"> Healing Bombs</label>
-                    <label class="checkbox-label"><input type="checkbox" name="filter-type" value="Soak"> Soaks & Salts</label>
-                    <label class="checkbox-label"><input type="checkbox" name="filter-type" value="Oil"> Body Oils</label>
-                    <label class="checkbox-label"><input type="checkbox" name="filter-type" value="Balm"> Healing Balms</label>
+                    <label class="checkbox-label"><input type="checkbox" name="filter-type" value="Bath Bomb"> Bath Bombs</label>
+                    <label class="checkbox-label"><input type="checkbox" name="filter-type" value="Plant"> Plants</label>
+                    <label class="checkbox-label"><input type="checkbox" name="filter-type" value="Herb"> Herbs</label>
+                    <label class="checkbox-label"><input type="checkbox" name="filter-type" value="SkinCare"> Skin Care</label>
+                    <label class="checkbox-label"><input type="checkbox" name="filter-type" value="Hair"> Hair Care</label>
                 </div>
 
                 <div class="filter-group">
                     <h3>Price Range</h3>
                     <label class="radio-label"><input type="radio" name="filter-price" id="price-all" value="all" checked> All Prices</label>
-                    <label class="radio-label"><input type="radio" name="filter-price" value="under-300"> Under R 300</label>
-                    <label class="radio-label"><input type="radio" name="filter-price" value="300-500"> R 300 - R 500</label>
-                    <label class="radio-label"><input type="radio" name="filter-price" value="over-500"> Over R 500</label>
+                    <label class="radio-label"><input type="radio" name="filter-price" value="under-50"> Under R 50</label>
+                    <label class="radio-label"><input type="radio" name="filter-price" value="50-100"> R 50 - R 100</label>
+                    <label class="radio-label"><input type="radio" name="filter-price" value="over-100"> Over R 100</label>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Sort By</h3>
+                    <select id="sort-dropdown" class="sort-dropdown">
+                        <option value="Recommended">Recommended</option>
+                        <option value="Price: Low to High">Price: Low to High</option>
+                        <option value="Price: High to Low">Price: High to Low</option>
+                    </select>
                 </div>
 
                 <button id="clear-filters-btn" class="btn btn-outline" style="margin-top: 1rem;">CLEAR FILTERS</button>
             </aside>
 
-            <!-- Product Grid -->
-            <div class="products-grid shop-product-grid" id="shop-product-grid">
-                <!-- Products will be dynamically rendered here by JS -->
+            <!-- Product Grid Area -->
+            <div style="flex: 1; display: flex; flex-direction: column;">
+                <!-- Active filters pill -->
+                <div id="active-filters" class="active-filters-container">
+                    <!-- Rendered by JS -->
+                </div>
+
+                <div class="products-grid shop-product-grid" id="shop-product-grid">
+                    <!-- Products will be dynamically rendered here by JS -->
+                </div>
             </div>
         </div>
     </main>
 
+    
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container text-center">
+            <h2>Subscribe for 10% Off</h2>
+            <p>Join our botanical community and receive exclusive offers, wellness tips, and early access to new releases.</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Zurentia!');">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit" class="btn btn-primary">SUBSCRIBE</button>
+            </form>
+        </div>
+    </section>
+
     <footer class="site-footer">
         <div class="container footer-inner">
             <div class="footer-logo logo">
-                <img src="assets/logo.png" alt="Zurentia Logo" class="bw-logo">
+                <img src="assets/logo.webp" alt="Zurentia Logo" class="bw-logo">
             </div>
             <div class="footer-links">
                 <ul>
@@ -170,7 +200,8 @@
                     <span>Total</span>
                     <span id="cart-total-price">R 0</span>
                 </div>
-                <button class="btn btn-primary checkout-btn" id="go-to-checkout-btn">PROCEED TO CHECKOUT</button>
+                <button class="btn btn-primary checkout-btn" id="go-to-checkout-btn" style="margin-bottom: 0.5rem;">PROCEED TO CHECKOUT</button>
+                <button id="clear-cart-btn" class="btn btn-outline" style="width: 100%; margin-top: 0.5rem;">EMPTY CART</button>
             </div>
         </div>
 
@@ -197,6 +228,10 @@
                         <label for="customer-address">Delivery Address</label>
                         <textarea id="customer-address" rows="3" placeholder="123 Main St..."></textarea>
                     </div>
+                    <div class="form-group">
+                        <label for="customer-notes">Order Notes (Optional)</label>
+                        <textarea id="customer-notes" rows="2" placeholder="Gift wrapping, special instructions..."></textarea>
+                    </div>
                 </form>
             </div>
             <div class="cart-footer">
@@ -206,6 +241,7 @@
         </div>
     </aside>
 
-    <script src="main.js"></script>
+    <script src="main.min.js"></script>
+
 </body>
 </html>
