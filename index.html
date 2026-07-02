@@ -3,16 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Basic SEO -->
     <meta name="description" content="Zurentia offers authentic natural healing products. Handcrafted essentials for mindful rituals infused with cosmetic alchemy.">
+    <link rel="canonical" href="https://www.zurentia.co.za/">
+    <title>Zurentia | Authentic Natural Healing</title>
+    
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.zurentia.co.za/">
     <meta property="og:title" content="Zurentia | Authentic Natural Healing">
     <meta property="og:description" content="Handcrafted essentials for mindful rituals. Connect with Nature's Essence and Healing Botanicals.">
-    <meta property="og:type" content="website">
-    <title>Zurentia | Authentic Natural Healing</title>
+    <meta property="og:image" content="https://www.zurentia.co.za/assets/hero_bg_new.png">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.zurentia.co.za/">
+    <meta name="twitter:title" content="Zurentia | Authentic Natural Healing">
+    <meta name="twitter:description" content="Handcrafted essentials for mindful rituals. Connect with Nature's Essence and Healing Botanicals.">
+    <meta name="twitter:image" content="https://www.zurentia.co.za/assets/hero_bg_new.png">
+    
+    <!-- Geographic Meta Tags (Local SEO) -->
+    <meta name="geo.region" content="ZA">
+    <meta name="geo.placename" content="South Africa">
+    
+    <!-- JSON-LD Structured Data (AEO/GEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.zurentia.co.za/#organization",
+          "name": "Zurentia",
+          "url": "https://www.zurentia.co.za/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.zurentia.co.za/assets/logo.webp"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+27-73-090-8780",
+            "contactType": "customer service",
+            "email": "info@zurentia.co.za",
+            "areaServed": "ZA",
+            "availableLanguage": "English"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.zurentia.co.za/#website",
+          "url": "https://www.zurentia.co.za/",
+          "name": "Zurentia",
+          "publisher": {
+            "@id": "https://www.zurentia.co.za/#organization"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.zurentia.co.za/shop.html?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="assets/logo.webp">
-    <link rel="preload" as="image" href="assets/hero_bg.webp">
+    <link rel="preload" as="image" href="assets/hero_bg_new.png">
     <link rel="stylesheet" href="styles.min.css">
 </head>
 <body>
@@ -47,13 +105,13 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-bg">
-                <img src="assets/hero_bg.webp" alt="Botanical Water Background">
+                <img src="assets/hero_bg_new.png" alt="Botanical Water Background">
             </div>
             <div class="hero-content container">
-                <div class="search-bar">
+                <form class="search-bar" action="shop.html" method="get">
                     <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <input type="text" placeholder="Search" aria-label="Search">
-                </div>
+                    <input type="text" name="q" placeholder="Search" aria-label="Search">
+                </form>
                 <div class="hero-text-box">
                     <h1>Harnessing the Color<br>and Healing Factor of<br>Nature. Infused with<br>Cosmetic Alchemy.</h1>
                     <p>Handcrafted Essentials for Mindful<br>Rituals. Connect with Nature's<br>Essence and Healing Botanicals.</p>
@@ -66,46 +124,46 @@
         <section id="shop" class="products-section container animate-on-scroll">
             <div class="products-grid">
                 <!-- Product 1 -->
-                <div class="product-card" data-product="Bath Bombs Collection" data-price="From R 35" data-img="assets/cat_bath_bomb_1781047428531.webp" style="cursor: pointer;">
+                <a href="shop.html?type=Bath Bomb" class="product-card">
                     <div class="product-image">
                         <span class="badge">Most Popular</span>
-                        <img src="assets/cat_bath_bomb_1781047428531.webp" alt="Vibrant Bath Bombs" loading="lazy">
+                        <img src="assets/cat_bath_bomb_new.png" alt="Vibrant Bath Bombs" loading="lazy">
                     </div>
                     <h3>VIBRANT BATH<br>BOMBS.</h3>
                     <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(24)</span></div>
                     <p class="price">From R 35</p>
-                    <button class="btn btn-primary smart-add-btn" data-product="Bath Bombs Collection">ADD TO CART</button>
-                </div>
+                    <span class="btn btn-primary">SHOP NOW</span>
+                </a>
                 <!-- Product 2 -->
-                <div class="product-card" data-product="Botanical Plants" data-price="From R 45" data-img="assets/cat_plant_1781047439075.webp" style="cursor: pointer;">
+                <a href="shop.html?type=Plant" class="product-card">
                     <div class="product-image">
-                        <img src="assets/cat_plant_1781047439075.webp" alt="Lush Botanical Plants" loading="lazy">
+                        <img src="assets/cat_plant_new.png" alt="Lush Botanical Plants" loading="lazy">
                     </div>
                     <h3>LUSH BOTANICAL<br>PLANTS.</h3>
                     <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(24)</span></div>
                     <p class="price">From R 45</p>
-                    <button class="btn btn-primary smart-add-btn" data-product="Botanical Plants">ADD TO CART</button>
-                </div>
+                    <span class="btn btn-primary">SHOP NOW</span>
+                </a>
                 <!-- Product 3 -->
-                <div class="product-card" data-product="Healing Herbs" data-price="From R 30" data-img="assets/cat_herbs_1781047449948.webp" style="cursor: pointer;">
+                <a href="shop.html?type=Herb" class="product-card">
                     <div class="product-image">
-                        <img src="assets/cat_herbs_1781047449948.webp" alt="Natural Healing Herbs" loading="lazy">
+                        <img src="assets/cat_herbs_new.png" alt="Natural Healing Herbs" loading="lazy">
                     </div>
                     <h3>NATURAL HEALING<br>HERBS.</h3>
                     <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(24)</span></div>
                     <p class="price">From R 30</p>
-                    <button class="btn btn-primary smart-add-btn" data-product="Healing Herbs">ADD TO CART</button>
-                </div>
+                    <span class="btn btn-primary">SHOP NOW</span>
+                </a>
                 <!-- Product 4 -->
-                <div class="product-card" data-product="Nourishing Skin Care" data-price="From R 37" data-img="assets/cat_skincare_1781047461950.webp" style="cursor: pointer;">
+                <a href="shop.html?type=SkinCare" class="product-card">
                     <div class="product-image">
-                        <img src="assets/cat_skincare_1781047461950.webp" alt="Nourishing Skin Care" loading="lazy">
+                        <img src="assets/cat_skincare_new.png" alt="Nourishing Skin Care" loading="lazy">
                     </div>
                     <h3>NOURISHING SKIN<br>CARE.</h3>
                     <div class="product-rating"><span class="stars">★★★★★</span><span class="count">(24)</span></div>
                     <p class="price">From R 37</p>
-                    <button class="btn btn-primary smart-add-btn" data-product="Nourishing Skin Care">ADD TO CART</button>
-                </div>
+                    <span class="btn btn-primary">SHOP NOW</span>
+                </a>
             </div>
             
             <!-- Promo Block -->
@@ -115,7 +173,7 @@
                     <p>Authentic natural healing is rooted in our connection and care, the ability to restore tranquility with every ritual we deliver based on Zurentia philosophy.</p>
                 </div>
                 <div class="promo-image">
-                    <img src="assets/promo_herbs.webp" alt="Botanical Ingredients" loading="lazy">
+                    <img src="assets/promo_herbs_new.png" alt="Botanical Ingredients" loading="lazy">
                 </div>
             </div>
         </section>
@@ -127,21 +185,21 @@
                 <div class="journal-grid">
                     <article class="journal-card" data-journal="botanicals" tabindex="0" role="button">
                         <div class="journal-image">
-                            <img src="assets/journal_1.webp" alt="Botanical Ingredients" loading="lazy">
+                            <img src="assets/journal_1_new.png" alt="Botanical Ingredients" loading="lazy">
                         </div>
                         <h3>The Power of Botanicals</h3>
                         <p class="date">Dec 13, 2023</p>
                     </article>
                     <article class="journal-card" data-journal="rituals" tabindex="0" role="button">
                         <div class="journal-image">
-                            <img src="assets/journal_2.webp" alt="Bath Ritual" loading="lazy">
+                            <img src="assets/journal_2_new.png" alt="Bath Ritual" loading="lazy">
                         </div>
                         <h3>Daily Healing Rituals</h3>
                         <p class="date">Dec 15, 2023</p>
                     </article>
                     <article class="journal-card" data-journal="sourcing" tabindex="0" role="button">
                         <div class="journal-image">
-                            <img src="assets/journal_3.webp" alt="Natural Elements" loading="lazy">
+                            <img src="assets/journal_3_new.png" alt="Natural Elements" loading="lazy">
                         </div>
                         <h3>Sustainable Sourcing</h3>
                         <p class="date">Dec 18, 2023</p>
@@ -184,7 +242,7 @@
             <div class="footer-contact">
                 <h4>CONTACT US</h4>
                 <p>+27 73 090 8780</p>
-                <p><a href="mailto:hello@zurentia.com">hello@zurentia.com</a></p>
+                <p><a href="mailto:info@zurentia.co.za">info@zurentia.co.za</a></p>
                 <div class="social-links">
                     <a href="#" aria-label="Instagram"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
                     <a href="#" aria-label="Facebook"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></a>

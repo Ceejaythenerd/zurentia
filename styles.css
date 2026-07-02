@@ -131,8 +131,8 @@ img {
 
 .btn-primary:hover {
     background-color: var(--clr-accent-gold-hover);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-sm);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 15px rgba(195, 154, 107, 0.3);
 }
 
 .btn-secondary {
@@ -144,7 +144,8 @@ img {
 
 .btn-secondary:hover {
     background-color: var(--clr-accent-gold-hover);
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 12px rgba(195, 154, 107, 0.2);
 }
 
 .btn-outline {
@@ -400,7 +401,16 @@ img {
 }
 
 .product-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+}
+
+.product-card:hover .product-image {
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+    border-color: rgba(255,255,255,0.7);
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
 }
 
 .product-image {
@@ -410,12 +420,15 @@ img {
     margin-bottom: var(--space-sm);
     border: 5px solid rgba(255,255,255,0.4); /* subtle frame */
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: all 0.4s ease;
+    overflow: hidden;
 }
 
 .product-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .badge {
@@ -765,7 +778,11 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 
 .modal-content {
     position: relative;
-    background: var(--clr-bg-primary);
+    background: rgba(234, 241, 232, 0.85); /* var(--clr-bg-primary) with opacity */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
     width: 90%;
     max-width: 800px;
     border-radius: 10px;
@@ -891,9 +908,12 @@ a:focus-visible, button:focus-visible, input:focus-visible {
     width: 100%;
     max-width: 400px;
     height: 100vh;
-    background-color: var(--clr-bg-primary);
+    background-color: rgba(234, 241, 232, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
     z-index: 1100;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.15);
     display: flex;
     flex-direction: column;
     transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1);
@@ -1664,5 +1684,52 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 @media (max-width: 768px) {
     .whatsapp-float {
         bottom: 70px; /* Above mobile scroll-to-top */
+    }
+}
+
+/* ==========================================================================
+   Comprehensive Mobile Optimizations
+   ========================================================================== */
+@media (max-width: 900px) {
+    .search-bar {
+        width: 100%;
+        max-width: 350px;
+    }
+    .promo-content p {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        height: 50px;
+    }
+    .brand-name {
+        font-size: 1rem;
+    }
+    .hero {
+        min-height: 400px;
+        height: 70vh;
+    }
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    .hero p {
+        font-size: 0.85rem;
+    }
+    .hero-text-box {
+        padding: var(--space-sm);
+    }
+    .promo-content h2 {
+        font-size: 1.8rem;
+    }
+    .journal-card h3 {
+        font-size: 1rem;
+    }
+    .products-section, .journal-section {
+        padding: var(--space-lg) 0;
+    }
+    .footer-inner {
+        padding: var(--space-md) 0;
     }
 }
