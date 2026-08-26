@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Rocket": { id: "Rocket", name: "Rocket", price: 65, img: "assets/product/rocket_bath_bomb_product.webp", type: "Bath Bomb" },
         "Rose": { id: "Rose", name: "Rose", price: 35, img: "assets/product/rose_bath_bomb.webp", type: "Bath Bomb" },
         "Shooting Star": { id: "Shooting Star", name: "Shooting Star", price: 65, img: "assets/product/teal_blue_bath_bomb_fizz.webp", type: "Bath Bomb" },
-        "Snowball": { id: "Snowball", name: "Snowball", price: 35, img: "assets/cat_bath_bomb_new.webp", type: "Bath Bomb" },
+        "Snowball": { id: "Snowball", name: "Snowball", price: 35, img: "assets/product/snowball_bath_bomb.webp", type: "Bath Bomb" },
         "Snuggle Paw": { id: "Snuggle Paw", name: "Snuggle Paw", price: 65, img: "assets/product/snuggle_paw_bath_bomb.webp", type: "Bath Bomb" },
         "Star Burst": { id: "Star Burst", name: "Star Burst", price: 35, img: "assets/product/yellow_bath_bomb_starburst.webp", type: "Bath Bomb" },
         "Strawberry Ice Cream Ball": { id: "Strawberry Ice Cream Ball", name: "Strawberry Ice Cream Ball", price: 35, img: "assets/product/strawberry_ice_cream_bath_bomb.webp", type: "Bath Bomb" },
