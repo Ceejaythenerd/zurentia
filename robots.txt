@@ -1,6 +1,21 @@
 User-agent: *
 Allow: /
-Disallow: /assets/
+
+# Explicitly allow AI Search Bots for AI SEO and Recognition
+User-agent: CCBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: GPTBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Omgilibot
+Allow: /
+User-agent: FacebookBot
+Allow: /
 
 Sitemap: https://www.zurentia.co.za/sitemap.xml
 

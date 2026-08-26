@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <!-- Basic SEO -->
     <meta name="description" content="Explore Zurentia's collection of handcrafted botanical essentials. Healing bombs, soaks, body oils, and balms.">
     <link rel="canonical" href="https://www.zurentia.co.za/shop.html">
@@ -25,6 +26,39 @@
     <!-- Geographic Meta Tags (Local SEO) -->
     <meta name="geo.region" content="ZA">
     <meta name="geo.placename" content="South Africa">
+
+    <!-- JSON-LD Structured Data (AEO/GEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Zurentia Products Catalog",
+      "description": "Browse our authentic natural healing products including bath bombs, plants, herbs, and skincare.",
+      "url": "https://www.zurentia.co.za/shop.html",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Botanical Bath Bombs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Natural Herbs & Spices"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Skincare & Body Oils"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Haircare Products"
+        }
+      ]
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
